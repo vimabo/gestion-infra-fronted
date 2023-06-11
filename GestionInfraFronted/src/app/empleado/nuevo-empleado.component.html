@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-5 mx-auto">
+      <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+        <div class="col">
+          <label class="form-label">Nombre Completo:</label>
+          <input type="text" class="form-control" aria-label="nombreCompleto" id="nombreCompleto" name="nombreCompleto"
+            [(ngModel)]="nombreCompleto">
+        </div>
+
+        <div class="col">
+          <label class="form-label">Tipo Documento:</label>
+          <select name="tiposDoc"  class="form-control" [(ngModel)]="tipoDocumento">
+            <option [value]="item" *ngFor="let item of tipoDocumentos">{{item}}</option>
+          </select>
+        </div>
+
+        <div class="col">
+          <label class="form-label">Numero Documento:</label>
+          <input type="text" class="form-control" aria-label="numeroDocumento" id="numeroDocumento"
+            name="numeroDocumento" [(ngModel)]="numeroDocumento">
+        </div>
+
+        <div class="col">
+          <label class="form-label">Email:</label>
+          <input type="text" class="form-control" aria-label="email" id="email" name="email" [(ngModel)]="email">
+        </div>
+
+        <br>
+        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+      </form>
+    </div>
+  </div>
+</div>

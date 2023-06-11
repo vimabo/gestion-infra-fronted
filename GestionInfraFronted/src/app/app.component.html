@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">GRUPO ASD</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+     
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/"><i class="far fa-list-alt"></i> Gestion Empleados</a>
+        <a class="nav-link"  routerLink="/nuevo"><i class="fas fa-plus-circle"></i>Crear Empleado</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/listGrupo"><i class="far fa-list-alt"></i> Gestion Grupos</a>
+        <a class="nav-link"  routerLink="/nuevoGrupo"><i class="fas fa-plus-circle"></i>Crear Grupo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/"><i class="far fa-list-alt"></i>Gestion Equipos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/"><i class="far fa-list-alt"></i> Gestion Ordenes</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

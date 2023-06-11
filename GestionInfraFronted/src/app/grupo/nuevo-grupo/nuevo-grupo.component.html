@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-5 mx-auto">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+                <div class="col">
+                    <label class="form-label">Nombre Grupo:</label>
+                    <input type="text" class="form-control" aria-label="nombre" id="nombre" name="nombre"
+                        [(ngModel)]="nombre">
+                </div>
+
+                <div class="col">
+                    <label class="form-label">Direccion:</label>
+                    <input type="text" class="form-control" aria-label="direccion" id="direccion" name="direccion"
+                        [(ngModel)]="direccion">
+                </div>
+                <div class="col">
+                    <label class="form-label">Empleados:</label>                    
+                    <ng-multiselect-dropdown 
+                    [settings]="dropdownSettings"
+                    [data]="empleados"
+                    [(ngModel)]="selectedItems"
+                    (onSelect)="onItemSelect($event)"
+                    (onSelectAll)="onSelectAll($event)"
+                    name="empleado">
+                   </ng-multiselect-dropdown>
+                </div>
+
+                <br>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+            </form>
+        </div>
+    </div>
+</div>

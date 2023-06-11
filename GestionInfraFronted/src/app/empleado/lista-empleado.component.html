@@ -1,0 +1,25 @@
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">NOMBRES</th>
+      <th scope="col">TIPO DOCUMENTO</th>
+      <th scope="col">NUMERO DOCUMENTO</th>
+      <th scope="col">EMAIL</th>
+      <th scope="col">ESTADO</th>
+      <th scope="col">ACCION</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let empleado of empleados">
+      <td>{{empleado.nombreCompleto}}</td>
+      <td>{{empleado.tipoDocumento}}</td>
+      <td>{{empleado.numeroDocumento}}</td>
+      <td>{{empleado.email}}</td>
+      <td>{{empleado.estado}}</td>
+      <td><button class="btn btn-outline-warning" routerLink="/editar/{{empleado.empleadoId}}"><i
+            class="far fa-edit"></i> Editar</button></td>
+      <td><button class="btn btn-outline-danger" 
+          (click)="borrar(empleado.empleadoId)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>

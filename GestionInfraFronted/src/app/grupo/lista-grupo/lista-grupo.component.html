@@ -1,0 +1,23 @@
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">DIRECCION</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">FECHA CREACION</th>
+        <th scope="col">FECHA MODIFICACION</th>
+        <th scope="col">ACCION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let grupo of grupos">
+        <td>{{grupo.direccion}}</td>
+        <td>{{grupo.nombre}}</td>
+        <td>{{grupo.fechaRegistro}}</td>
+        <td>{{grupo.fechaModificacion}}</td>
+        <td><button class="btn btn-outline-warning" routerLink="/editarGrupo/{{grupo.grupoId}}"><i
+              class="far fa-edit"></i> Editar</button></td>
+        <td><button class="btn btn-outline-danger" 
+            (click)="borrar(grupo.grupoId)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>

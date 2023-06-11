@@ -1,0 +1,38 @@
+<div class="container" *ngIf="empleado">
+    <div class="row mt-5">
+        <div class="col-md-10 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label">Nombre Completo:</label>
+                        <input type="text" class="form-control" placeholder="Nombre Completo"
+                            aria-label="Nombre Completo" id="nombreCompleto" name="nombreCompleto"
+                            [(ngModel)]="empleado.nombreCompleto">
+                    </div>
+
+                    <div class="col">
+                        <label class="form-label">Tipo Documento:</label>
+                        <select name="tiposDoc"  class="form-control" [(ngModel)]="empleado.tipoDocumento">
+                          <option [value]="item" *ngFor="let item of tipoDocumentos">{{item}}</option>
+                        </select>
+                    </div>
+
+                    <div class="col">
+                        <label class="form-label">Numero Documento:</label>
+                        <input type="text" class="form-control" aria-label="Numero Documento" id="numeroDocumento"
+                            name="numeroDocumento" [(ngModel)]="empleado.numeroDocumento">
+                    </div>
+                    
+                    <div class="col">
+                        <label class="form-label">Email:</label>
+                        <input type="text" class="form-control" aria-label="Email" id="email"
+                            name="email" [(ngModel)]="empleado.email">
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
