@@ -1,0 +1,27 @@
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">MARCA</th>
+        <th scope="col">CODIGO DE BARRAS</th>
+        <th scope="col">ESTADO</th>
+        <th scope="col">FECHA REGISTRO</th>
+        <th scope="col">ORDEN</th>
+        <th scope="col">ACCION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let equipo of equipos">
+        <td>{{equipo.nombre}}</td>
+        <td>{{equipo.marca}}</td>
+        <td>{{equipo.codigoBarras}}</td>
+        <td>{{equipo.estado}}</td>
+        <td>{{equipo.fechaRegistro}}</td>
+        <td>{{equipo.ordenId}}</td>
+        <td><button class="btn btn-outline-warning" routerLink="/editarEquipo/{{equipo.equipoId}}"><i
+              class="far fa-edit"></i> Editar</button></td>
+        <td><button class="btn btn-outline-danger" 
+            (click)="borrar(equipo.equipoId)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>

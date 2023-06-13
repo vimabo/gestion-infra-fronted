@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-5 mx-auto">
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+
+                <div class="col">
+                    <label class="form-label">Descripción:</label>
+                    <input type="text" class="form-control" aria-label="descripcion" id="descripcion" name="descripcion"
+                        [(ngModel)]="descripcion">
+                </div>
+                <div class="col">
+                    <label class="form-label">Estado:</label>
+                    <select name="estadosLis" class="form-control" [(ngModel)]="estado">
+                        <option [value]="item" *ngFor="let item of estadosOrdenes">{{item}}</option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <label class="form-label">Equipos:</label>
+                    <ng-multiselect-dropdown [settings]="equiposDropdownSettings" [data]="equipos"
+                        [(ngModel)]="selectedItemsEquipo" (onSelect)="onItemSelect($event)"
+                        (onSelectAll)="onSelectAll($event)" name="equipo">
+                    </ng-multiselect-dropdown>
+                </div>
+
+                <div class="col">
+                    <label class="form-label">Asignar A:</label>
+                    <select name="asignar" class="form-control" (change)="onChange($event)"
+                        [(ngModel)]="asignado">
+                        <option value="1">EMPLEADO</option>
+                        <option value="2">GRUPO</option>
+                    </select>
+                </div>
+
+                <div *ngIf="comboEmpleado" class="col">
+                    <label class="form-label">Empleado:</label>
+                    <select name="empleado" class="form-control" [(ngModel)]="selectedEmpleado">
+                        <option *ngFor="let e of empleados" [ngValue]="e.empleadoId">{{e.nombreCompleto}}</option>
+                    </select>
+                </div>
+
+                <div *ngIf="comboGrupo" class="col">
+                    <label class="form-label">Grupo:</label>
+                    <select name="grupo"  class="form-control" [(ngModel)]="selectedGrupo">
+                        <option *ngFor="let g of grupos" [ngValue]="g.grupoId">{{g.nombre}}</option>
+                    </select>
+                </div>
+                <br>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+            </form>
+        </div>
+    </div>
+</div>

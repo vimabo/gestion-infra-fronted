@@ -11,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 export class ListaEmpleadoComponent implements OnInit {
 
   empleados: Empleado[] = [];
+  filtro: '' | undefined;
 
   constructor(private empleadoService: EmpleadoService,
     private toastr: ToastrService) { }

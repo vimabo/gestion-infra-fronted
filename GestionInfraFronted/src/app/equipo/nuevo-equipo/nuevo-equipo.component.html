@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-5 mx-auto">
+        <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+  
+          <div class="col">
+            <label class="form-label">Nombre Equipo:</label>
+            <input type="text" class="form-control" aria-label="nombre" id="nombre" name="nombre"
+              [(ngModel)]="nombre">
+          </div>
+          <div class="col">
+            <label class="form-label">Marca:</label>
+            <input type="text" class="form-control" aria-label="marca" id="marca"
+              name="marca" [(ngModel)]="marca">
+          </div>
+          <div class="col">
+            <label class="form-label">Codigo Barras:</label>
+            <input type="text" class="form-control" aria-label="codigoBarras" id="codigoBarras"
+              name="codigoBarras" [(ngModel)]="codigoBarras">
+          </div>
+  
+          <div class="col">
+            <label class="form-label">Estado:</label>
+            <select name="estadosLis"  class="form-control" [(ngModel)]="estado">
+              <option [value]="item" *ngFor="let item of estadosEquipos">{{item}}</option>
+            </select>
+          </div>
+          <br>
+          <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+        </form>
+      </div>
+    </div>
+  </div>

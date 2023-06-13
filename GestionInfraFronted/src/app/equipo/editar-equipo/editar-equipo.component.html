@@ -1,0 +1,36 @@
+<div class="container" *ngIf="equipo">
+    <div class="row mt-5">
+        <div class="col-md-10 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label">Nombre Equipo:</label>
+                        <input type="text" class="form-control" placeholder="Nombre Equipo"
+                            aria-label="Nombre Equipo" id="nombre" name="nombre"
+                            [(ngModel)]="equipo.nombre">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Marca:</label>
+                        <input type="text" class="form-control" aria-label="Marca" id="marca"
+                            name="marca" [(ngModel)]="equipo.marca">
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Codigo De Barras:</label>
+                        <input type="text" class="form-control" aria-label="Codigo Barras" id="codigoBarras"
+                            name="codigoBarras" [(ngModel)]="equipo.codigoBarras">
+                    </div>
+
+                    <div class="col">
+                        <label class="form-label">Estado:</label>
+                        <select name="estadosEqu"  class="form-control" [(ngModel)]="equipo.estado">
+                          <option [value]="item" *ngFor="let item of estadosEquipos">{{item}}</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

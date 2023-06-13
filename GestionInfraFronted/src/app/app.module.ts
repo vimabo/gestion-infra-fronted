@@ -26,6 +26,14 @@ import { NuevoGrupoComponent } from './grupo/nuevo-grupo/nuevo-grupo.component';
 import { EditarGrupoComponent } from './grupo/editar-grupo/editar-grupo.component';
 import { ListaGrupoComponent } from './grupo/lista-grupo/lista-grupo.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { ListaEquipoComponent } from './equipo/lista-equipo/lista-equipo.component';
+import { NuevoEquipoComponent } from './equipo/nuevo-equipo/nuevo-equipo.component';
+import { EditarEquipoComponent } from './equipo/editar-equipo/editar-equipo.component';
+import { ListaOrdenComponent } from './orden/lista-orden/lista-orden.component';
+import { NuevaOrdenComponent } from './orden/nueva-orden/nueva-orden.component';
+import { EditarOrdenComponent } from './orden/editar-orden/editar-orden.component';
+import { DetalleOrdenComponent } from './orden/detalle-orden/detalle-orden.component';
+
 
 
 
@@ -38,7 +46,14 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     DateInputConverter,
     NuevoGrupoComponent,
     EditarGrupoComponent,
-    ListaGrupoComponent
+    ListaGrupoComponent,
+    ListaEquipoComponent,
+    NuevoEquipoComponent,
+    EditarEquipoComponent,
+    ListaOrdenComponent,
+    NuevaOrdenComponent,
+    EditarOrdenComponent,
+    DetalleOrdenComponent,
   ],
   imports: [
     BrowserModule,
