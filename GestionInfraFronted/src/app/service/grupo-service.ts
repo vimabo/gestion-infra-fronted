@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { catchError } from 'rxjs/operators';
 import { throwError as observableThrowError } from 'rxjs';
 import { Grupo } from '../models/grupo';
+import { TokenService } from './token.service';
 
 @Injectable({
     providedIn: 'root'
@@ -12,10 +13,11 @@ import { Grupo } from '../models/grupo';
 export class GrupoService {
 
     private baseUrl: string = environment.baseUrl;
-    private token: string = environment.token;
+    //private token: string = environment.token;
+    token = '';
 
 
-    constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient, private tokenService: TokenService) { }
 
     public lista(): Observable<Grupo[]> {
         let headers = this.createAuthorizationHeader();
@@ -46,9 +48,18 @@ export class GrupoService {
 
     createAuthorizationHeader(): HttpHeaders {
         let headers = new HttpHeaders();
+    
+        this.tokenService.token('Boca').subscribe(
+          data => {
+            this.token = data.token;
+          },
+          err => {
+            console.log(err);
+          }
+        );
         headers = headers.append('Authorization', this.token);
         return headers;
-    }
+      }
 
     errorHandler(error: HttpErrorResponse) {
         return observableThrowError(error.error);
