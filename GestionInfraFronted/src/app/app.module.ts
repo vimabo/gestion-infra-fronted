@@ -33,6 +33,12 @@ import { ListaOrdenComponent } from './orden/lista-orden/lista-orden.component';
 import { NuevaOrdenComponent } from './orden/nueva-orden/nueva-orden.component';
 import { EditarOrdenComponent } from './orden/editar-orden/editar-orden.component';
 import { DetalleOrdenComponent } from './orden/detalle-orden/detalle-orden.component';
+import { SearchEmpleado } from './empleado/search.empleado';
+import { SearchEquipo } from './equipo/lista-equipo/search.equipo';
+import { SearchGrupo } from './grupo/lista-grupo/search.grupo';
+import { SearchOrden } from './orden/lista-orden/search.orden';
+
+
 
 
 
@@ -54,6 +60,10 @@ import { DetalleOrdenComponent } from './orden/detalle-orden/detalle-orden.compo
     NuevaOrdenComponent,
     EditarOrdenComponent,
     DetalleOrdenComponent,
+    SearchEmpleado,
+    SearchEquipo,
+    SearchGrupo,
+    SearchOrden
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,32 @@
-<p>detalle-orden works!</p>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-5 mx-auto">
+                <div class="col">
+                    <label class="form-label">Descripción:</label>
+                    <input type="text" class="form-control" [disabled]="true" aria-label="descripcion" id="descripcion" name="descripcion"
+                        [(ngModel)]="orden.descripcion">
+                </div>
+                <div class="col">
+                    <label class="form-label">Estado:</label>
+                    <input type="text" class="form-control" [disabled]="true" aria-label="estado" id="estado" name="estado"
+                        [(ngModel)]="orden.estado">
+                </div>
+                <div class="col">
+                    <label class="form-label">Equipos:</label>
+                    <ng-multiselect-dropdown [settings]="equiposDropdownSettings" 
+                    [disabled]="true"
+                    [data]="selectedItemsEquipo"
+                        [(ngModel)]="selectedItemsEquipo" 
+                         name="equipo" >
+                    </ng-multiselect-dropdown>
+                </div>
+                <div class="col">
+                    <label class="form-label">Asignado To:</label>
+                    <input type="text"  [disabled]="true" class="form-control" aria-label="asignado" id="asignado" name="asignado"
+                        [(ngModel)]="asignado">
+                </div>
+                <br>
+                <button class="btn btn-outline-success btn-block" routerLink="/listOrden">Volver</button>
+        </div>
+    </div>
+</div>

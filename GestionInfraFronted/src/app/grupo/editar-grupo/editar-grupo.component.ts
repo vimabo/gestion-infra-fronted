@@ -13,14 +13,9 @@ import { GrupoService } from 'src/app/service/grupo-service';
   styleUrls: ['./editar-grupo.component.css']
 })
 export class EditarGrupoComponent implements OnInit {
-
- 
   grupo: Grupo =
     new Grupo(0, '', '', []);
-
-
     empleados: Empleado[] = [];
-
 
     dropdownList = [];
     dropdownSettings:IDropdownSettings={};

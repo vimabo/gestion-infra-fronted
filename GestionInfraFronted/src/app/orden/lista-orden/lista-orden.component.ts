@@ -11,7 +11,8 @@ import { OrdenService } from 'src/app/service/orden.service';
 export class ListaOrdenComponent implements OnInit {
 
   ordenes: Orden[] = [];
-
+  filtro: '' | undefined;
+  
   constructor(private ordenService: OrdenService,
     private toastr: ToastrService) { }
 

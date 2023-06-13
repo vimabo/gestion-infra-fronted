@@ -1,3 +1,6 @@
+<div class="container">
+  <input style="width: 100%" type="text" [(ngModel)]="filtro" placeholder="Ingrese filtro..."/>
+</div>
 <table class="table table-dark table-striped">
     <thead>
       <tr>
@@ -9,7 +12,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let grupo of grupos">
+      <tr *ngFor="let grupo of grupos  | grupoFilter:filtro">
         <td>{{grupo.direccion}}</td>
         <td>{{grupo.nombre}}</td>
         <td>{{grupo.fechaRegistro}}</td>

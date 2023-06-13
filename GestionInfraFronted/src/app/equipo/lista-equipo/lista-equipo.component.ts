@@ -11,6 +11,7 @@ import { EquipoService } from 'src/app/service/equipo.service';
 export class ListaEquipoComponent implements OnInit {
 
   equipos: Equipo[] = [];
+  filtro: '' | undefined;
 
   constructor(private equipoService: EquipoService,
     private toastr: ToastrService) { }

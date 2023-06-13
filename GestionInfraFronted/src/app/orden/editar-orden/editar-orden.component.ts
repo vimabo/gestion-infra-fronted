@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import { ToastrService } from 'ngx-toastr';
-import { Equipo } from 'src/app/models/equipo';
 import { Orden } from 'src/app/models/orden';
-import { EmpleadoService } from 'src/app/service/empleado.service';
-import { EquipoService } from 'src/app/service/equipo.service';
 import { OrdenService } from 'src/app/service/orden.service';
 
 @Component({
@@ -22,8 +18,6 @@ export class EditarOrdenComponent implements OnInit {
 
   constructor(
     private ordenService: OrdenService,
-    private equipoService: EquipoService,
-    private empleadoService: EmpleadoService,
     private activatedRoute: ActivatedRoute,
     private toastr: ToastrService,
     private router: Router) { }

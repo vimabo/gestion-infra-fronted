@@ -12,7 +12,8 @@ export class ListaGrupoComponent implements OnInit {
 
 
   grupos: Grupo[] = [];
-
+  filtro: '' | undefined;
+  
   constructor(private grupoService: GrupoService,
     private toastr: ToastrService) { }
 
